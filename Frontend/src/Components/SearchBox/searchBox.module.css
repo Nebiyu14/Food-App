@@ -1,0 +1,19 @@
+.inputContainer {
+width: 300px;
+margin: 1rem auto;
+}
+
+.input{
+width: 100%;
+padding: 10px;
+border: none;
+background-color: lab(97.23% 0.01 -0.01);
+outline: none;
+border-radius: 10px;
+font-size: 16px;
+}
+
+.input:focus {
+    border-bottom: 1px solid green;
+    border-radius: 4px 4px 0 0 ;
+}

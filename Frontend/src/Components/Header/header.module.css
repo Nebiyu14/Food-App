@@ -1,0 +1,13 @@
+.nav{
+    /* background-color: rgb(185, 179, 179); */
+    padding: 20px;
+    font-weight: bolder;
+    font-size: 40px;
+    box-shadow: 0 0 4px black;
+    display: flex;
+    justify-content: center;
+    /* margin: 0 auto; */
+    margin-bottom: 1rem;
+
+    color: green;
+}

@@ -1,0 +1,35 @@
+.recipeContainer {
+  /* background-color: yellow; */
+  padding: 20px;
+  text-align: left;
+}
+
+.mainTitle {
+  color: red;
+  text-align: center;
+}
+
+.title {
+  font-weight: bolder;
+}
+
+.imagee img {
+  width: 300px;
+  height: auto;
+}
+
+.shorts {
+  display: flex;
+  gap: 10px;
+  padding: 0 0 20px;
+}
+
+.ingredients {
+  line-height: 1.5;
+  padding: 20px;
+}
+
+.instruction {
+  padding: 20px;
+  border-top: 2px solid red;
+}

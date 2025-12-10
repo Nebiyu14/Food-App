@@ -1,0 +1,37 @@
+.foodCard {
+    margin: 4rem 0;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 6px hsla(0, 0%, 5%, 0.253);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.titleContainer{
+    /* font-family: Arial, Helvetica, sans-serif; */
+    text-align: center;
+    margin: 0.5rem;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.imageContainer{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.btnContainer{
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: space-around;
+}
+.recipeBtn {
+    margin-bottom: 10px;
+    border: none;
+    background-color: green;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
