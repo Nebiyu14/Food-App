@@ -5,6 +5,7 @@ Frontend/dist
 
 # Environment variables
 Backend/.env
+Frontend/.env
 .env
 
 # Build outputs

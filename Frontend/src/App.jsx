@@ -4,7 +4,7 @@ import "./App.css";
 import Search from "./Components/SearchBox/Search";
 import FoodLists from "./Components/FoodLists/FoodLists";
 import Header from "./Components/Header/Header";
-import OuterContainer from "./Components/Container/OuterContainer/outerContainer";
+import OuterContainer from "./Components/Container/OuterContainer/OuterContainer";
 import InnerContainer from "./Components/Container/innerContainer/InnerContainer";
 import FoodDetails from "./Components/FoodDetails/FoodDetails";
 

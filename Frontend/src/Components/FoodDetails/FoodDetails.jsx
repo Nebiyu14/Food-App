@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import style from "./foodDetail.module.css";
+
+const API_URL = import.meta.env.VITE_API_URL;
+
 function FoodDetails({ foodId }) {
   const [recipe, setRecipe] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -11,7 +14,9 @@ function FoodDetails({ foodId }) {
       try {
         setIsLoading(true);
         setError("");
-        const response = await fetch(`http://localhost:5000/recipes/${foodId}`);
+        const response = await fetch(`${API_URL}/recipes/${foodId}`);
+
+        // const response = await fetch(`http://localhost:5000/recipes/${foodId}`);
         // const response = await fetch("http://localhost:5000/recipe/offline");
         if (!response.ok) throw new Error("Could not fetch recipe");
         const recipe = await response.json();

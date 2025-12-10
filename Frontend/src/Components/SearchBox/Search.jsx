@@ -1,15 +1,24 @@
 import React, { useEffect, useState } from "react";
 import styles from "./searchBox.module.css";
+
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function Search({ foodData, setFoodData }) {
   const [query, setQuery] = useState("");
   useEffect(() => {
     async function fetchFood() {
-      console.log("Fetching from backend offline data [JSON]");
       try {
+        if (!query) {
+          setFoodData([]);
+          return;
+        }
         // const response = await fetch("http://localhost:5000/offlineData");
-        const response = await fetch(
-          `http://localhost:5000/findFood?query=${query}`
-        );
+        // const response = await fetch(
+        //   `http://localhost:5000/findFood?query=${query}`
+        // );
+
+        const response = await fetch(`${API_URL}/findFood?query=${query}`);
+
         const data = await response.json();
 
         console.log("Fetched", data.results);
