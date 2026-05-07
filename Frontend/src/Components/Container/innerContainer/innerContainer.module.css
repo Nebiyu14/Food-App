@@ -1,6 +1,30 @@
-.innerContainer{
-    flex: 1;
-    margin: 0 10px;
-    box-shadow: 0 0 0.6px black;
+.innerContainer {
+  flex: 1;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
+}
+
+.innerContainer:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 1024px) {
+  .innerContainer {
+    min-height: auto;
+    max-height: 70vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .innerContainer {
     border-radius: 10px;
+    min-height: auto;
+    max-height: none;
+  }
 }

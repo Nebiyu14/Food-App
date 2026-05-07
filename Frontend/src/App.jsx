@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import "./App.css";
 import Search from "./Components/SearchBox/Search";
 import FoodLists from "./Components/FoodLists/FoodLists";
@@ -11,13 +10,31 @@ import FoodDetails from "./Components/FoodDetails/FoodDetails";
 function App() {
   const [foodData, setFoodData] = useState([]);
   const [foodId, setFoodId] = useState("654959");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleFoodDataChange = (data) => {
+    setFoodData(data);
+  };
+
+  const handleLoadingChange = (loading) => {
+    setIsLoading(loading);
+  };
+
   return (
     <>
       <Header />
-      <Search foodData={foodData} setFoodData={setFoodData} />
+      <Search 
+        foodData={foodData} 
+        setFoodData={handleFoodDataChange}
+        setIsLoading={handleLoadingChange}
+      />
       <OuterContainer>
         <InnerContainer>
-          <FoodLists setFoodId={setFoodId} foodData={foodData} />
+          <FoodLists 
+            setFoodId={setFoodId} 
+            foodData={foodData}
+            isLoading={isLoading}
+          />
         </InnerContainer>
         <InnerContainer>
           <FoodDetails foodId={foodId} />

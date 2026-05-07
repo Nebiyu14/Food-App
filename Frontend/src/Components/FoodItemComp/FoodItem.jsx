@@ -1,24 +1,32 @@
 import React from "react";
-import style from "./foodItem.module.css";
+import styles from "./foodItem.module.css";
 
 export default function FoodItem({ food, setFoodId }) {
+  const handleViewRecipe = () => {
+    console.log("Viewing recipe for:", food.id);
+    setFoodId(food.id);
+  };
+
   return (
-    <div className={style.foodCard}>
-      <div className={style.imageContainer}>
-        <img className={style.foodImage} src={food.image} alt="" />
+    <div className={styles.foodCard}>
+      <div className={styles.imageContainer}>
+        <img
+          className={styles.foodImage}
+          src={food.image}
+          alt={food.title}
+          loading="lazy"
+        />
+        <div className={styles.imageOverlay} />
       </div>
-      <div className={style.titleContainer}>
-        <p className={style.foodTitle}>{food.title}</p>
-      </div>
-      <div className={style.btnContainer}>
+      <div className={styles.contentContainer}>
+        <h3 className={styles.foodTitle}>{food.title}</h3>
         <button
-          onClick={() => {
-            console.log(food.id);
-            setFoodId(food.id);
-          }}
-          className={style.recipeBtn}
+          onClick={handleViewRecipe}
+          className={styles.recipeBtn}
+          aria-label={`View recipe for ${food.title}`}
         >
-          View Recipe
+          <span>View Recipe</span>
+          <span className={styles.icon}>→</span>
         </button>
       </div>
     </div>

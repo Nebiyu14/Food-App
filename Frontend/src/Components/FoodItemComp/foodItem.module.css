@@ -1,37 +1,149 @@
 .foodCard {
-    margin: 4rem 0;
-    width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 0 6px hsla(0, 0%, 5%, 0.253);
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  animation: slideUp 0.5s ease-out;
 }
 
-.titleContainer{
-    /* font-family: Arial, Helvetica, sans-serif; */
-    text-align: center;
-    margin: 0.5rem;
-    font-weight: bolder;
-    font-size: 20px;
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.imageContainer{
-    width: 100%;
-    height: auto;
-    overflow: hidden;
+.foodCard:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-8px);
 }
 
-.btnContainer{
-    /* background-color: yellow; */
-    display: flex;
-    justify-content: space-around;
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--light-gray) 0%, #e8e8e8 100%);
 }
+
+.foodImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+}
+
+.foodCard:hover .foodImage {
+  transform: scale(1.08);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.foodCard:hover .imageOverlay {
+  opacity: 1;
+}
+
+.contentContainer {
+  padding: var(--spacing-lg);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.foodTitle {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--dark-charcoal);
+  margin: 0 0 var(--spacing-lg) 0;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
+}
+
 .recipeBtn {
-    margin-bottom: 10px;
-    border: none;
-    background-color: green;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: linear-gradient(
+    135deg,
+    var(--primary-orange) 0%,
+    var(--secondary-orange) 100%
+  );
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  font-family: var(--font-family-main);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.recipeBtn:hover {
+  background: linear-gradient(
+    135deg,
+    var(--primary-orange-hover) 0%,
+    #e55a2b 100%
+  );
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.recipeBtn:active {
+  transform: translateY(0);
+}
+
+.icon {
+  font-size: var(--font-size-base);
+  transition: transform var(--transition-fast);
+}
+
+.recipeBtn:hover .icon {
+  transform: translateX(2px);
+}
+
+@media (max-width: 768px) {
+  .foodCard {
+    border-radius: 10px;
+  }
+
+  .imageContainer {
+    height: 180px;
+  }
+
+  .contentContainer {
+    padding: var(--spacing-md);
+  }
+
+  .foodTitle {
+    font-size: var(--font-size-sm);
+  }
+
+  .recipeBtn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-xs);
+  }
 }
