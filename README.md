@@ -7,8 +7,8 @@ A full-stack web application for searching, browsing, and viewing detailed food 
 
 ## Live Demo
 
-- **Frontend:** [View Live Frontend](https://your-frontend-link.com) 
-- **Backend API:** [View Live Backend](https://your-backend-link.com) 
+- **Frontend:** [View Live Frontend](https://food-zone-five-lake.vercel.app) 
+- **Backend API:** [View Live on Render](https://food-zone-backend-esku.onrender.com) 
 
 ---
 
