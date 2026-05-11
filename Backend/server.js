@@ -31,7 +31,7 @@ app.get("/recipe/offline", async (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("Server is running...");
+  res.send("Backend server is running...");
 });
 
 app.get("/findFood", async (req, res) => {

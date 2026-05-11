@@ -25,8 +25,12 @@ export default function Search({ foodData, setFoodData, setIsLoading }) {
           if (!response.ok) throw new Error("Failed to fetch recipes");
 
           const data = await response.json();
-          console.log("Fetched from api: ", data.message);
-          console.log("Fetched from api: ", data.results);
+          // Show API limit message if response is undefined or empty
+          if (!data || !data.results) {
+            setError("API Limit has reached or no data returned.");
+            setFoodData([]);
+            return;
+          }
           setFoodData(data.results || []);
         } catch (error) {
           console.error("Error while fetching:", error);
@@ -38,7 +42,7 @@ export default function Search({ foodData, setFoodData, setIsLoading }) {
       }
 
       fetchFood();
-    }, 1000); // Debounce search
+    }, 3000); // Debounce search
 
     return () => clearTimeout(timer);
   }, [query, setFoodData, setIsLoading]);
