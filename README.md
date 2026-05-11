@@ -1,80 +1,127 @@
-# Food-App
+# Food Zone - Full Stack Recipe Application
 
-A full-stack web application built with React (Vite) frontend and Node.js + Express backend. FOODAPP allows users to search for food items, view food list, and fetch detailed recipe information from the Spoonacular API.
+A full-stack web application for searching, browsing, and viewing detailed food recipes. Built with **React (Vite)** on the frontend and **Node.js + Express** on the backend, with real-time data from the Spoonacular API.
 
-# 🍽️ Food Recipe App (Full-Stack)
-
-A modern full-stack application that allows users to search for food, view detailed recipes, and access cooking instructions. This project demonstrates a complete integration between a **Vite + React frontend** and a **Node.js/Express backend**, featuring dynamic API consumption and offline fallback capabilities.
-
-🔗 **View Live:** [Click Here](https://food-app-frontend-4eh8.onrender.com)
-
-## 🚀 Key Features
-
-- **Full-Stack Architecture:** separation of concerns between client and server.
-- **Dynamic Search:** Fetches real-time food data using the **Spoonacular API**.
-- **Detailed Recipe Views:** Click on any item to view ingredients and instructions (`/recipes/:id`).
-- **Offline Support:** Includes JSON data modes (`/recipe/offline`) for development without API limits.
-- **Modern Tech Stack:** Uses **Vite** and **ES Modules** (`import/export`) across the entire stack.
 
 ---
 
-## 🛠️ Tech Stack
+## Live Demo
 
-### **Frontend**
+- **Frontend:** [View Live Frontend](https://your-frontend-link.com) 
+- **Backend API:** [View Live Backend](https://your-backend-link.com) 
 
-- **React 19** - UI Library
-- **Vite** - Build tool & Development Server
-- **CSS Modules/Standard CSS** - Styling
-- **Fetch API** - Data consumption
+---
 
-### **Backend**
+## Features
 
-- **Node.js** - Runtime environment
-- **Express.js** - Web Framework
-- **Dotenv** - Environment Variable Management
-- **CORS** - Cross-Origin Resource Sharing security
+- **Full-Stack Architecture**
+  - Clean separation between client (React) and server (Node/Express)
+- **Dynamic Food Search**
+  - Search for food items in real-time using the Spoonacular API
+- **Recipe List & Details**
+  - Browse a list of recipes and click to view detailed ingredients and instructions
+- **Responsive UI**
+  - Mobile-friendly, modern design with CSS Modules
+- **Error Handling**
+  - User-friendly messages for empty results or API errors
+
+---
+
+## Tech Stack
+
+- **Frontend:**
+  - React 19 (with Hooks)
+  - Vite 
+  - CSS Modules for component-scoped styling
+  - Fetch API for HTTP requests
+
+- **Backend:**
+  - Node.js (ES Modules)
+  - Express.js (REST API)
+  - dotenv (environment variables)
+  - cors (CORS security)
+
+---
+
+## Project Structure
+
+- `Frontend/`
+  - React app source code (`src/Components`, `App.jsx`, etc.)
+  - Vite config, static assets, and CSS
+- `Backend/`
+  - Express server (`server.js`)
+  - Local data files (`pastaData.json`, `recipe.json`)
+  - Environment config (`.env`)
 
 ---
 
 ## Installation & Setup
 
-- This project uses a monorepo structure. You will need to install dependencies for both the backend and frontend.
+> This project uses a monorepo structure. Install dependencies for both backend and frontend.
 
-### Clone the repository
+### 1. Clone the Repository
 
-```
+```bash
 git clone https://github.com/Nebiyu14/Food-App.git
+cd FoodApp
 ```
 
-## Backend Setup
+### 2. Backend Setup
 
-- Navigate to the backend folder, install dependencies, and start the server.
+- Navigate to the backend folder:
+  - `cd Backend`
+- Install dependencies:
+  - `npm install`
+- Create a `.env` file in `Backend/` with:
+  - `PORT=5000`
+  - `SPOON_URL=https://api.spoonacular.com/recipes/complexSearch`
+  - `RECIPE_URL=https://api.spoonacular.com/recipes`
+  - `API_KEY=your_spoonacular_api_key_here`
+- Start the backend server:
+  - `npm start`
+- The server runs at: [http://localhost:5000](http://localhost:5000)
 
-* cd Backend
-* npm install
-* npm start
+### 3. Frontend Setup
 
-### ⚙️ Environment Variables
+- Open a new terminal and navigate to the frontend folder:
+  - `cd ../Frontend`
+- Install dependencies:
+  - `npm install`
+- Start the Vite dev server:
+  - `npm run dev`
+- The app runs at: [http://localhost:5173](http://localhost:5173)
 
-To run this project locally, you must create a `.env` file in the `Backend` folder.
+---
 
-```env
-PORT=5000
-SPOON_URL=https://api.spoonacular.com/recipes/complexSearch
-RECIPE_URL=https://api.spoonacular.com/recipes
-API_KEY=enter_your_spoonacular_api_key_here
-```
+## Usage
 
-- The server will run on: http://localhost:5000
+1. Start both backend and frontend servers as described above.
+2. Open the frontend URL in your browser.
+3. Use the search bar to find recipes by keyword (e.g., "pasta").
+4. Click on a recipe to view details, ingredients, and instructions.
+5. If the API limit is reached, the app might not show any results.
 
-## Frontend Setup
+---
 
-- Open a new terminal, navigate to the frontend folder, and launch the Vite server.
-- cd ../Foodapp
-- npm install
-- npm run dev
+## API Endpoints
 
-* The app will run on: http://localhost:5173
+- `GET /findFood?query=foodname` - Search for food recipes
+- `GET /recipes/:id` - Get detailed recipe info by ID
+- `GET /recipe/offline` - Get offline recipe data (for development)
+- `GET /offlineData` - Get offline pasta data (for development)
 
-👨‍💻 Author
+---
+
+
+## FAQ
+
+- **Where do I get a Spoonacular API key?**
+  - Sign up at [Spoonacular](https://spoonacular.com/food-api) and generate a free API key.
+- **How do I run the app offline?**
+  - The backend provides `/recipe/offline` and `/offlineData` endpoints for local JSON data.
+
+
+---
+
+Author
 [Nebiyu](https://github.com/Nebiyu14)

@@ -7,7 +7,7 @@ export default function Header() {
       <div className={styles.headerContent}>
         <div className={styles.logoContainer}>
           <span className={styles.icon}>🍴</span>
-          <h1 className={styles.title}>FoodHub</h1>
+          <h1 className={styles.title}>Food Zone</h1>
         </div>
         <p className={styles.subtitle}>Discover Delicious Recipes</p>
       </div>
